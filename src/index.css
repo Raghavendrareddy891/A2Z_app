@@ -1,51 +1,85 @@
-/* General Styling */
+/* General Styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f4f4f9;
+  color: #333;
 }
 
 h1 {
   text-align: center;
-  color: #2e3d49;
+  color: #4caf50;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+.form-field {
+  margin: 15px 0;
+}
+
+input[type="text"],
+input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+/* SearchForm Styles */
+.search-form {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 50px auto;
+}
+
+.search-form h1 {
+  font-size: 24px;
   margin-bottom: 20px;
 }
 
-/* Search Form Styling */
-.search-form {
-  max-width: 600px;
-  margin: 30px auto;
-  padding: 20px;
-  background-color: white;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+.search-form form {
+  display: flex;
+  flex-direction: column;
 }
 
-.search-form input {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+.search-btn {
+  margin-top: 20px;
 }
 
-.search-form button {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.search-form button:hover {
-  background-color: #0056b3;
-}
-
-/* Bus Results Styling */
+/* BusResults Styles */
 .bus-results-page {
   padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .bus-results {
@@ -56,42 +90,48 @@ h1 {
 
 .bus-card {
   background-color: white;
-  padding: 15px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
   border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 .bus-info h3 {
-  color: #2e3d49;
   font-size: 18px;
+  color: #4caf50;
   margin-bottom: 10px;
 }
 
 .bus-info p {
   font-size: 14px;
-  color: #555;
+  margin: 5px 0;
 }
 
 .fare {
-  color: #d9534f;
   font-size: 16px;
   font-weight: bold;
+  color: #e91e63;
 }
 
 .actions {
-  margin-top: 15px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 .book-btn {
-  padding: 10px 20px;
-  background-color: #28a745;
+  background-color: #e91e63;
   color: white;
-  border: none;
+  font-size: 16px;
+  padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+  border: none;
 }
 
 .book-btn:hover {
-  background-color: #218838;
+  background-color: #d81b60;
+}
+
+.bus-card:hover {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
 }
