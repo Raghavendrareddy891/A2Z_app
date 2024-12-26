@@ -9,7 +9,7 @@ const BusResults = () => {
   const fetchBusData = async () => {
     try {
       const response = await fetch(
-        `http://192.168.31.49:5000/get_buses?source=${source}&destination=${destination}&jdate=${journeyDate}`
+        `http://172.17.34.41:5000/get_buses?source=${source}&destination=${destination}&jdate=${journeyDate}`
       );
       const data = await response.json();
       if (data.serviceDetailsList) {
