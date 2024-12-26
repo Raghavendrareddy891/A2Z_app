@@ -1,8 +1,10 @@
 from flask import Flask, jsonify, request
 import requests
 from flask_cors import CORS
+from flask import Flask, send_from_directory
 
-app = Flask(__name__)
+#app = Flask(__name__)
+app = Flask(__name__, static_folder="frontend/build", static_url_path="/")
 CORS(app)  # Enable CORS to allow requests from React frontend
 
 # Dictionary for available locations and their IDs
@@ -56,5 +58,24 @@ def get_buses():
     bus_data = get_abhibus_data(source, destination, jdate)
     return jsonify(bus_data)
 
+
+
+
+
+# Route to serve the React static files
+@app.route("/")
+def serve_react():
+    return send_from_directory(app.static_folder, "index.html")
+
+# Route to serve the API
+@app.route("/api/greet")
+def greet():
+    return {"message": "Hello from Flask!"}
+
+# Handle React routing (any non-API routes)
+@app.errorhandler(404)
+def not_found(e):
+    return send_from_directory(app.static_fol)
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=5000)
